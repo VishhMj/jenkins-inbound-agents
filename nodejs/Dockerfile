@@ -1,4 +1,4 @@
-FROM jenkins/inbound-agent
+FROM giddu/jenkins-inbound-agent:awscli
 
 # install nodejs
 ENV NODE_VERSION=16.19.0

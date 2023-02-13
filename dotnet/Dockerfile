@@ -1,4 +1,4 @@
-FROM jenkins/inbound-agent
+FROM giddu/jenkins-inbound-agent:awscli
 
 USER root
 
