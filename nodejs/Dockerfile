@@ -1,4 +1,4 @@
-FROM giddu/jenkins-inbound-agent:awscli
+FROM giddu/jenkins-inbound-agent:sonarscanner
 
 # install nodejs
 ENV NODE_VERSION=16.19.0

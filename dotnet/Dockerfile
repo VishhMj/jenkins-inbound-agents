@@ -1,4 +1,4 @@
-FROM giddu/jenkins-inbound-agent:awscli
+FROM giddu/jenkins-inbound-agent:sonarscanner
 
 USER root
 
