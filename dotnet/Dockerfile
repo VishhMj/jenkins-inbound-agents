@@ -1,4 +1,4 @@
-FROM giddu/jenkins-inbound-agent:sonarscanner
+FROM giddu/jenkins-inbound-agent:awscli
 
 USER root
 
@@ -11,4 +11,9 @@ RUN rm packages-microsoft-prod.deb
 RUN apt-get update && \
       apt-get install -y dotnet-sdk-6.0
 
+
 USER jenkins
+
+RUN dotnet tool install --global dotnet-sonarscanner
+
+RUN dotnet tool list --global
