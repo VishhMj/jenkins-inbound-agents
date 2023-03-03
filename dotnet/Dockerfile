@@ -2,14 +2,19 @@ FROM giddu/jenkins-inbound-agent:awscli
 
 USER root
 
-RUN apt-get update && apt-get install -y wget
+RUN apt-get update && apt-get -y install sudo
 
-RUN wget https://packages.microsoft.com/config/debian/11/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
-RUN dpkg -i packages-microsoft-prod.deb
-RUN rm packages-microsoft-prod.deb
+RUN sudo apt update && sudo apt install git
 
-RUN apt-get update && \
-      apt-get install -y dotnet-sdk-6.0
+RUN sudo apt update && sudo apt -y install dotnet6
+
+RUN export PATH="$PATH:/root/.dotnet/tools"
+
+RUN sudo apt-get install openjdk-11-jdk -y
+
+RUN sudo apt-get install openjdk-11-jre -y
+ 
+RUN sudo update-alternatives --config java 
 
 
 USER jenkins
